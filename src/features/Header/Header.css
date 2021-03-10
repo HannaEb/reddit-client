@@ -1,0 +1,75 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    padding: 0.5em 1em;
+    border-bottom: 1px solid grey;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+
+.logo h1 {
+    padding-left: 0.5em;
+    font-size: 1.2em;
+}
+
+.logo h1 span {
+    color: #FA014E;
+    font-style: italic;
+}
+
+.logoIcon {
+    color: #FA014E;
+}
+
+.searchForm {
+   width: 300px;
+}
+
+.searchTerm {
+   height: 2.5em;
+   border: 1px solid grey;
+   border-right: none;
+   border-radius: 5px 0 0 5px;
+   padding-left: 0.5em;
+   vertical-align: top;
+   width: 90%
+}
+
+.searchBtn {
+   height: 2.5em;
+   background: #FFF;
+   border: 1px solid grey;
+   border-left: none;
+   border-radius: 0 5px 5px 0;
+   vertical-align: top;
+   padding-top: 0.3em;
+   padding-right: 0.7em;
+   width: 10%;
+}
+
+.searchBtn:hover {
+    cursor: pointer;
+}
+
+.hiddenDiv {
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

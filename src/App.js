@@ -1,8 +1,7 @@
 import React from 'react';
-import {
-  BrowserRouter as Router, Switch, Route, Redirect,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import './App.css'
+import Header from './features/Header/Header'
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
             path="/"
             render={() => (
               <React.Fragment>
-
+                <Header />
               </React.Fragment>
             )}
           />
