@@ -1,0 +1,36 @@
+
+h2 {
+    background: #F8FAFB;
+    text-align: center;
+    padding: 1em;
+    color: #2F3A45;
+    font-weight: bold;
+}
+
+li button {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    border-top: 1px solid #DAE0E6;
+    background-color: #FFF;
+    font-size: 1em;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+li button:hover {
+    background: #F8FAFB;
+}
+
+.subreddit-icon {
+    position: relative;
+    top: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: #2F3A45;
+}
+/* #394754 */
+/* #F8FAFB */
+/* #DAE0E6 */
+/* #2F3A45 */
