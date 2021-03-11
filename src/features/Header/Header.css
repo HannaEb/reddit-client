@@ -1,5 +1,5 @@
 
-.headerContent {
+.header-content {
     padding: 0.5em 1em;
     border-bottom: 1px solid grey;
     display: grid;
@@ -23,16 +23,16 @@
     font-style: italic;
 }
 
-.logoIcon {
+.logo-icon {
     color: #FA014E;
 }
 
-.searchForm {
+.search-form {
    width: 300px;
    margin: auto;
 }
 
-.searchTerm {
+.search-term {
    height: 2.5em;
    border: 1px solid grey;
    border-right: none;
@@ -42,7 +42,7 @@
    width: 90%
 }
 
-.searchBtn {
+.search-btn {
    height: 2.5em;
    background: #FFF;
    border: 1px solid grey;
@@ -54,7 +54,7 @@
    width: 10%;
 }
 
-.searchBtn:hover {
+.search-btn:hover {
     cursor: pointer;
 }
 

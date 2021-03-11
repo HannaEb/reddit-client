@@ -8,18 +8,16 @@ const Header = () => {
 
     return (
         <header>
-            <div className="headerContent">
-            <div className="logo">
-                <SiReddit className="logoIcon" size={32}/>
-                <h1>reddit<span>client</span></h1>
-            </div>
-            <form className="searchForm">
-                <input className="searchTerm" type="text" placeholder="Search..." aria-label="Search posts"></input>
-                <button className="searchBtn" type="submit" aria-label="Search"><BsSearch /></button>
-            </form>
-            <div className="hiddenDiv">
-                
-            </div>
+            <div className="header-content">
+                <div className="logo">
+                    <SiReddit className="logo-icon" size={32}/>
+                    <h1>reddit<span>client</span></h1>
+                </div>
+                <form className="search-form">
+                    <input className="search-term" type="text" placeholder="Search..." aria-label="Search posts"></input>
+                    <button className="search-btn" type="submit" aria-label="Search"><BsSearch /></button>
+                </form>
+                <div className="hidden-div"></div>
             </div>
         </header>
     )
