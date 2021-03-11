@@ -8,6 +8,7 @@ const Header = () => {
 
     return (
         <header>
+            <div className="headerContent">
             <div className="logo">
                 <SiReddit className="logoIcon" size={32}/>
                 <h1>reddit<span>client</span></h1>
@@ -18,6 +19,7 @@ const Header = () => {
             </form>
             <div className="hiddenDiv">
                 
+            </div>
             </div>
         </header>
     )

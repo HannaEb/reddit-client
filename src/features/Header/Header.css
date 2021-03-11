@@ -1,16 +1,15 @@
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #FFFFFF;
+
+.headerContent {
     padding: 0.5em 1em;
     border-bottom: 1px solid grey;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    width: 200px;
 }
 
 .logo h1 {
@@ -30,6 +29,7 @@ header {
 
 .searchForm {
    width: 300px;
+   margin: auto;
 }
 
 .searchTerm {
@@ -58,9 +58,6 @@ header {
     cursor: pointer;
 }
 
-.hiddenDiv {
-    width: 200px;
-}
 
 
 
