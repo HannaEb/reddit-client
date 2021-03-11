@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import './App.css'
 import Header from './features/Header/Header'
+import { Subreddits } from './features/Subreddits/Subreddits'
 
 function App() {
   return (
@@ -12,9 +13,14 @@ function App() {
             exact
             path="/"
             render={() => (
-              <React.Fragment>
-                <Header />
-              </React.Fragment>
+              <>
+                <header>
+                  <Header />
+                </header>
+                <nav>
+                  <Subreddits />
+                </nav>
+              </>
             )}
           />
           <Redirect to="/" />
