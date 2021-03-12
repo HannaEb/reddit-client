@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import './App.css'
 import Header from './features/Header/Header'
-import { Subreddits } from './features/Subreddits/Subreddits'
+import Subreddits from './features/Subreddits/Subreddits'
 
 function App() {
   return (

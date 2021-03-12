@@ -1,10 +1,16 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import './Subreddits.css'
+import { selectSubreddits, fetchSubreddits } from '../../slices/subRedditSlice'
 
 
-export const Subreddits = () => {
-    const subreddits = useSelector(state => state.subreddits)
+const Subreddits = () => {
+    const dispatch = useDispatch()
+    const subreddits = useSelector(selectSubreddits)
+
+    useEffect(() => {
+        dispatch(fetchSubreddits())
+    }, [dispatch]);
 
     return (
         <>
@@ -14,8 +20,8 @@ export const Subreddits = () => {
                     {subreddits.map((subreddit) => (
                         <li key={subreddit.id}>
                             <button>
-                                <div className="subreddit-icon">{subreddit.icon}</div>
-                                <div>{subreddit.topic}</div>
+                                <img src={subreddit.icon_img}></img>
+                                <div>{subreddit.display_name}</div>
                             </button>
                         </li>
                     ))}     
@@ -24,3 +30,9 @@ export const Subreddits = () => {
         </>
     )
 }
+
+export default Subreddits;
+
+
+
+
