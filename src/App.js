@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import './App.css'
 import Header from './features/Header/Header'
 import Subreddits from './features/Subreddits/Subreddits'
+import Feed from './features/Feed/Feed'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <main>
               <Switch>
                 <Route exact Path="/">
-                  {/* <Feed /> */}
+                  <Feed />
                 </Route>
               </Switch>
             </main>
