@@ -13,7 +13,7 @@ li button {
     border: none;
     border-top: 1px solid #DAE0E6;
     background-color: #FFF;
-    font-size: 1em;
+    /* font-size: 1em; */
     padding: 0.5em;
     padding-top: 0.6em;
     display: flex;
@@ -25,12 +25,19 @@ li button:hover {
 }
 
 .subreddit-icon {
+    height: 20px;
+    width: auto;
+    padding: 0 0.5em;
+    border-radius: 50%;
+}
+
+/* .subreddit-icon {
     position: relative;
     top: 1px;
     padding-left: 0.5em;
     padding-right: 0.5em;
     color: #2F3A45;
-}
+} */
 /* #394754 */
 /* #F8FAFB */
 /* #DAE0E6 */
