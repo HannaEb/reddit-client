@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import './Subreddits.css'
 import { selectSubreddits, fetchSubreddits } from '../../slices/subRedditSlice'
 import IMG from '../../images/reddit-icon.png'
+import { setSelectedSubreddit } from '../../slices/postSlice'
 
 const Subreddits = () => {
     const dispatch = useDispatch()
@@ -24,7 +25,7 @@ const Subreddits = () => {
         content =  <ul>
                         {subreddits.map((subreddit) => (
                             <li key={subreddit.id}>
-                                <button>
+                                <button onClick={() => dispatch(setSelectedSubreddit(subreddit.url))}>
                                     <img src={subreddit.icon_img || IMG} className="subreddit-icon"></img>
                                     <div>{subreddit.display_name}</div>
                                 </button>
