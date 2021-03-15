@@ -13,3 +13,6 @@ const postSlice = createSlice({
 })
 
 export default postSlice.reducer
+export const selectPosts = state => state.posts 
+export const selectPostById = (state, postId) =>
+    state.posts.find(post => post.id === postId)

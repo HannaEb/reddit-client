@@ -4,9 +4,10 @@ import './Feed.css'
 import '../Post/Post.css'
 import { Link } from 'react-router-dom'
 import Post from '../Post/Post'
+import { selectPosts } from '../../slices/postSlice'
 
 export const Feed = () => {
-    const posts = useSelector(state => state.posts)
+    const posts = useSelector(selectPosts)
 
     const content = posts.map(post => (
 
