@@ -1,18 +1,31 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { getSubredditPosts } from '../api/reddit'
 
-const initialState = [
-    { id: '1', title: 'First Post', content: 'Content of first post', author: 'Alex'},
-    { id: '2', title: 'Second Post', content: 'Content of second post', author: 'Luni'},
-    { id: '3', title: 'Third Post', content: 'Content of third post', author: 'Marley'},
-]
+const initialState = {
+    posts: [],
+    selectedSubreddit: '/r/funny/'
+}
+
+export const fetchPosts = (subreddit) => async (dispatch) => {
+    const posts = await getSubredditPosts(subreddit);
+    dispatch(addPosts(posts))
+}
 
 const postSlice = createSlice({
     name: 'posts',
     initialState,
-    reducers: {}
+    reducers: {
+        addPosts(state, action) {
+            state.posts = action.payload;
+        },
+        setSelectedSubreddit(state, action) {
+            state.selectedSubreddit = action.payload;
+        }
+    }
 })
 
 export default postSlice.reducer
-export const selectPosts = state => state.posts 
-export const selectPostById = (state, postId) =>
-    state.posts.find(post => post.id === postId)
+export const selectPosts = state => state.posts.posts 
+export const selectPostById = (state, postId) => state.posts.posts.find(post => post.id === postId)
+export const { addPosts, setSelectedSubreddit } = postSlice.actions
+    

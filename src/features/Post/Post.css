@@ -1,7 +1,12 @@
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 a:visited {
     color: inherit;
+}
+
+.post-image {
+    max-width: 500px;
 }

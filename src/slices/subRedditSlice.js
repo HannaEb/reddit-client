@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { SiReddit } from 'react-icons/si'
-import { getSubreddits } from '../api/reddit';
+import { getSubreddits } from '../api/reddit'
 
 const initialState = {
     subreddits: [],
