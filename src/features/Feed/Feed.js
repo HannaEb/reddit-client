@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import './Feed.css'
+import '../Post/Post.css'
 import { Link } from 'react-router-dom'
 import Post from '../Post/Post'
 
