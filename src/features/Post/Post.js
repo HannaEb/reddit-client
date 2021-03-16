@@ -19,11 +19,22 @@ const Post = ({ match }) => {
     }
 
     return (
-        <article key={post.id} className="post">
-            <h3>{post.title}</h3>
-            <p>{post.content}</p>
-            <p>{post.author}</p>
-            <Link to="/">Back</Link>
+        <article key={post.id} className="single-post">
+            <div className="post-wrapper">
+                <div className="post-container">
+                    <div className="post-content">
+                        <p className="post-refs">Posted by {post.author}</p>
+                        <h3 className="post-title">{post.title}</h3>
+                        <img src={post.url} className="post-image"></img>
+                        <p className="post-text">{post.selftext}</p>
+                    </div>  
+                    <div className="post-comments">
+                        <p>{post.num_comments} Comments</p>
+                    </div>
+                </div>
+                <div className="post-votes"></div>
+                {/* <Link to="/">Back</Link> */}
+            </div>
         </article>
     )
 }

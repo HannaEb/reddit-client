@@ -7,6 +7,59 @@ a:visited {
     color: inherit;
 }
 
+.post {
+    max-width: 768px;
+}
+
+.post-wrapper {
+    border: 1px solid #BCC7D1;
+    border-radius: 3px 3px 0 0;
+    display: flex;
+    width: 100%;
+}
+
+.post-container {
+    border-radius: 3px 0 0 0;
+    width: 100%;
+    background: #FFF;
+    padding: 0 1em;
+}
+
+.post-refs {
+    font-size: 11px;
+    color: #808080;
+    padding: 1em 0 ;
+}
+
+.post-title {
+    color: #2F3A45;
+    padding: 0.5em 0;
+    font-weight: bold;
+}
+
 .post-image {
     max-width: 500px;
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em 0;
+}
+
+.post-text {
+    font-size: 14px;
+    line-height: 120%;
+    padding: 0.5em 0;
+}
+
+.post-comments {
+    font-size: 12px;
+    color: #808080;
+    font-weight: bold;
+    padding: 1em 0 ;
+}
+
+.post-votes {
+    border-left: 1px solid #DAE0E6;
+    border-radius: 0 3px 0 0;
+    background: #F8FAFB;
+    padding: 1em 0.5em;
 }
