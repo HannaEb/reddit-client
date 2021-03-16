@@ -51,10 +51,15 @@ a:visited {
 }
 
 .post-comments {
+    display: flex;
     font-size: 12px;
     color: #808080;
     font-weight: bold;
-    padding: 1em 0 ;
+    padding: 1em 0;
+}
+
+.num-comments {
+    padding-left: 0.5em;
 }
 
 .post-votes {

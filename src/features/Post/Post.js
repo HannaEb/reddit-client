@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import './Post.css'
+import { FaCommentAlt } from 'react-icons/fa'
 import { selectPostById } from '../../slices/postSlice'
 
 
@@ -29,7 +30,8 @@ const Post = ({ match }) => {
                         <p className="post-text">{post.selftext}</p>
                     </div>  
                     <div className="post-comments">
-                        <p>{post.num_comments} Comments</p>
+                        <FaCommentAlt size={14}/>
+                        <p className="num-comments">{post.num_comments} Comments</p>
                     </div>
                 </div>
                 <div className="post-votes"></div>
