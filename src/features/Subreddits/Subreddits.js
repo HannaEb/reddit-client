@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import './Subreddits.css'
 import { selectSubreddits, fetchSubreddits } from '../../slices/subRedditSlice'
 import IMG from '../../images/reddit-icon.png'
@@ -24,12 +25,14 @@ const Subreddits = () => {
     } else if (subredditStatus === 'succeeded') {
         content =  <ul>
                         {subreddits.map((subreddit) => (
-                            <li key={subreddit.id}>
-                                <button onClick={() => dispatch(setSelectedSubreddit(subreddit.url))}>
-                                    <img src={subreddit.icon_img || IMG} className="subreddit-icon"></img>
-                                    <div>{subreddit.display_name}</div>
-                                </button>
-                            </li>
+                            <Link to="/">
+                                <li key={subreddit.id}>
+                                    <button onClick={() => dispatch(setSelectedSubreddit(subreddit.url))}>
+                                        <img src={subreddit.icon_img || IMG} className="subreddit-icon"></img>
+                                        <div>{subreddit.display_name}</div>
+                                    </button>
+                                </li>
+                            </Link>
                         ))}     
                     </ul>
     } else if (subredditStatus === 'failed') {
