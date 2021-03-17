@@ -3,7 +3,6 @@ import { BsSearch } from 'react-icons/bs'
 import { SiReddit } from 'react-icons/si'
 import './Header.css'
 
-
 const Header = () => {
 
     return (

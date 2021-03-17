@@ -17,7 +17,7 @@ function App() {
             </aside>
             <main>
               <Switch>
-                <Route exact path="/" render={() => (<Feed />)} />
+                <Route exact path="/" component={Feed} />
                 <Route exact path="/posts/:postId" component={Post} />
                 <Redirect to="/" />
               </Switch>
