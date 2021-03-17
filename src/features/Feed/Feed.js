@@ -9,6 +9,7 @@ import { FaCommentAlt } from 'react-icons/fa'
 import { ImArrowUp, ImArrowDown } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
+import abbreviateNumber from '../../utils/abbreviateNumber'
 
 export const Feed = () => {
     const dispatch = useDispatch()
@@ -39,12 +40,12 @@ export const Feed = () => {
                                 </div>  
                                 <div className="post-comments">
                                     <FaCommentAlt size={14}/>
-                                    <p className="num-comments">{Pluralize('Comment', post.num_comments, true)}</p>
+                                    <p className="num-comments">{Pluralize('Comment', abbreviateNumber(post.num_comments), true)}</p>
                                 </div>
                             </div>
                         <div className="post-votes">
                             <ImArrowUp className="vote-arrow" />
-                                <p className="vote-count">{post.ups}</p>
+                                <p className="vote-count">{abbreviateNumber(post.ups)}</p>
                             <ImArrowDown className="vote-arrow" />
                         </div>
                     </div>
