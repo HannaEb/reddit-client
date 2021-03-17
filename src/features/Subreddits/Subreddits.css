@@ -18,6 +18,7 @@ li button {
     padding-top: 0.6em;
     display: flex;
     align-items: center;
+    font-size: 14px;
 }
 
 li button:hover {

@@ -8,7 +8,7 @@ a:visited {
 }
 
 .post {
-    max-width: 768px;
+    max-width: 900px;
 }
 
 .post-wrapper {
@@ -26,7 +26,7 @@ a:visited {
 }
 
 .post-refs {
-    font-size: 11px;
+    font-size: 12px;
     color: #808080;
     padding: 1em 0 ;
 }
@@ -73,7 +73,7 @@ a:visited {
 }
 
 .vote-count {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     padding-top: 0.2em;
     padding-bottom: 0.5em;

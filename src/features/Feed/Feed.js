@@ -24,7 +24,7 @@ export const Feed = () => {
     let content
 
     if (postStatus === 'loading') {
-        content = <div>Loading...</div>
+        content = <div className="notification">Loading...</div>
     } else if (postStatus === 'succeeded') {
         content = posts.map((post, index) => (
             <article key={post.id} className="single-post">
@@ -52,7 +52,7 @@ export const Feed = () => {
             </article>
         ))
     } else if (postStatus === 'failed') {
-        content = <div>{error}</div>
+        content = <div className="notification">{error}</div>
     }
     
     return (
