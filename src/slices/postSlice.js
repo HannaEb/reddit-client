@@ -3,13 +3,15 @@ import { getSubredditPosts } from '../api/reddit'
 
 const initialState = {
     posts: [],
+    status: 'idle',
+    error: null,
     selectedSubreddit: '/r/funny/'
 }
 
-export const fetchPosts = (subreddit) => async (dispatch) => {
+export const fetchPosts = createAsyncThunk('posts/status', async (subreddit) => {
     const posts = await getSubredditPosts(subreddit);
-    dispatch(addPosts(posts))
-}
+    return posts 
+})
 
 const postSlice = createSlice({
     name: 'posts',
@@ -20,6 +22,19 @@ const postSlice = createSlice({
         },
         setSelectedSubreddit(state, action) {
             state.selectedSubreddit = action.payload;
+        }
+    },
+    extraReducers: {
+        [fetchPosts.pending]: (state, action) => {
+            state.status = 'loading'
+        },
+        [fetchPosts.fulfilled]: (state, action) => {
+            state.status ='succeeded'
+            state.posts = action.payload;
+        },
+        [fetchPosts.rejected]: (state, action) => {
+            state.status = 'failed'
+            state.error = action.error.message
         }
     }
 })
