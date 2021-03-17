@@ -36,7 +36,7 @@ export const Feed = () => {
                                     <p className="post-refs">Posted by {post.author} <TimeAgo date={post.created_utc * 1000} /></p>
                                     <h3 className="post-title">{post.title}</h3>
                                     <img src={post.url} alt="" className="post-image"></img>
-                                    <p className="post-text">{post.selftext.substring(0, 100)}</p>
+                                    <p className="post-text">{post.selftext.substring(0, 300) + (post.selftext.length > 300 ? "..." : "")}</p>
                                 </div>  
                                 <div className="post-comments">
                                     <FaCommentAlt size={14}/>
