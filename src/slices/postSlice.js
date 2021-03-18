@@ -18,7 +18,7 @@ const postSlice = createSlice({
     name: 'posts',
     initialState,
     reducers: {
-        addPosts(state, action) {
+        getPosts(state, action) {
             state.posts = action.payload;
         },
         setSelectedSubreddit(state, action) {
