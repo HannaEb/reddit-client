@@ -4,19 +4,22 @@ import './Feed.css'
 import '../Post/Post.css'
 import { Link } from 'react-router-dom'
 import Post from '../Post/Post'
-import { selectPosts, fetchPosts } from '../../slices/postSlice'
+import { selectPosts, fetchPosts, selectFilteredPosts, setSearchTerm } from '../../slices/postSlice'
 import { FaCommentAlt } from 'react-icons/fa'
 import { ImArrowUp, ImArrowDown } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
 import abbreviateNumber from '../../utils/abbreviateNumber'
 
-export const Feed = () => {
-    const dispatch = useDispatch()
+
+const Feed = () => {
     const posts = useSelector(selectPosts)
     const selectedSubreddit = useSelector(state => state.posts.selectedSubreddit)
-    const postStatus = useSelector(state => state.posts.status)
+    const searchTerm = useSelector(state => state.posts.searchTerm)
     const error = useSelector(state => state.posts.error)
+    const postStatus = useSelector(state => state.posts.status)
+    const filteredPosts = useSelector(selectFilteredPosts)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchPosts(selectedSubreddit))
@@ -27,7 +30,9 @@ export const Feed = () => {
     if (postStatus === 'loading') {
         content = <div className="notification">Loading...</div>
     } else if (postStatus === 'succeeded') {
-        content = posts.map((post, index) => (
+        if (filteredPosts.length === 0) {
+            content = <div className="notification">No posts found</div>
+        } else content = filteredPosts.map((post, index) => (
             <article key={post.id} className="single-post">
                 <Link to={`/posts/${post.id}`}>
                     <div className="post-wrapper">
@@ -51,7 +56,7 @@ export const Feed = () => {
                     </div>
                 </Link>
             </article>
-        ))
+        ))   
     } else if (postStatus === 'failed') {
         content = <div className="notification">{error}</div>
     }

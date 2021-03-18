@@ -1,11 +1,12 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import { getSubredditPosts } from '../api/reddit'
 
 const initialState = {
     posts: [],
     status: 'idle',
     error: null,
-    selectedSubreddit: '/r/funny/'
+    selectedSubreddit: '/r/funny/',
+    searchTerm: ''
 }
 
 export const fetchPosts = createAsyncThunk('posts/status', async (subreddit) => {
@@ -22,6 +23,9 @@ const postSlice = createSlice({
         },
         setSelectedSubreddit(state, action) {
             state.selectedSubreddit = action.payload;
+        },
+        setSearchTerm(state, action) {
+            state.searchTerm = action.payload;
         }
     },
     extraReducers: {
@@ -42,5 +46,18 @@ const postSlice = createSlice({
 export default postSlice.reducer
 export const selectPosts = state => state.posts.posts 
 export const selectPostById = (state, postId) => state.posts.posts.find(post => post.id === postId)
-export const { addPosts, setSelectedSubreddit } = postSlice.actions
-    
+export const { addPosts, setSelectedSubreddit, setSearchTerm } = postSlice.actions
+const selectSearchTerm = state => state.posts.searchTerm
+
+export const selectFilteredPosts = createSelector(
+    [selectPosts, selectSearchTerm],
+    (posts, searchTerm) => {
+      if (searchTerm !== '') {
+        return posts.filter(post =>
+          post.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }
+  
+      return posts;
+    }
+  );
