@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import './Subreddits.css'
 import { selectSubreddits, fetchSubreddits } from '../../slices/subRedditSlice'
 import IMG from '../../images/reddit-icon.png'
-import { setSelectedSubreddit } from '../../slices/postSlice'
+import { setSelectedSubreddit, setSearchTerm } from '../../slices/postSlice'
+
 
 const Subreddits = () => {
     const dispatch = useDispatch()
@@ -27,7 +28,10 @@ const Subreddits = () => {
                         {subreddits.map((subreddit) => (
                             <Link to="/">
                                 <li key={subreddit.id}>
-                                    <button onClick={() => dispatch(setSelectedSubreddit(subreddit.url))}>
+                                    <button onClick={() => 
+                                            dispatch(setSelectedSubreddit(subreddit.url)),
+                                            dispatch(setSearchTerm(''))
+                                            }>
                                         <img src={subreddit.icon_img || IMG} className="subreddit-icon"></img>
                                         <div>{subreddit.display_name}</div>
                                     </button>
