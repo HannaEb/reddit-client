@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import Post from '../Post/Post'
 import { selectPosts, fetchPosts, selectFilteredPosts, setSearchTerm } from '../../slices/postSlice'
 import { FaCommentAlt } from 'react-icons/fa'
-import { ImArrowUp, ImArrowDown } from 'react-icons/im'
+import { ImArrowUp, ImArrowDown, ImArrowLeft } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
 import abbreviateNumber from '../../utils/abbreviateNumber'
@@ -31,7 +31,7 @@ const Feed = () => {
         content = <div className="notification">Loading...</div>
     } else if (postStatus === 'succeeded') {
         if (filteredPosts.length === 0) {
-            content = <div className="notification">No posts found</div>
+            content =  <div className="notification">No posts found</div>
         } else content = filteredPosts.map((post, index) => (
             <article key={post.id} className="single-post">
                 <Link to={`/posts/${post.id}`}>

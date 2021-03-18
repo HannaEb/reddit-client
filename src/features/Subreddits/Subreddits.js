@@ -29,8 +29,8 @@ const Subreddits = () => {
                             <Link to="/">
                                 <li key={subreddit.id}>
                                     <button onClick={() => 
-                                            dispatch(setSelectedSubreddit(subreddit.url)),
-                                            dispatch(setSearchTerm(''))
+                                            [dispatch(setSelectedSubreddit(subreddit.url)),
+                                            dispatch(setSearchTerm(''))]
                                             }>
                                         <img src={subreddit.icon_img || IMG} className="subreddit-icon"></img>
                                         <div>{subreddit.display_name}</div>
