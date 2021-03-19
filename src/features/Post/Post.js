@@ -16,9 +16,7 @@ const Post = ( props ) => {
 
     if (!post) {
         return (
-            <div>
-                <h2>Post not found</h2>
-            </div>
+            <div className="notification">Post not found</div>
         )
     }
 

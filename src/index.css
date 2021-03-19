@@ -83,6 +83,16 @@ section {
 	grid-gap: 2em;
 }
 
+.notification {
+    background: #FFF;
+    text-align: center;
+    padding: 1em;
+    color: #2F3A45;
+    font-weight: bold;
+    border-radius: 3px 3px 0 0;
+	border: 1px solid #BCC7D1;
+}
+
 
 
 

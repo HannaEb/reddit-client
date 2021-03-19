@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import './Feed.css'
 import '../Post/Post.css'
 import { Link } from 'react-router-dom'
-import { fetchPosts, selectFilteredPosts } from '../../slices/postSlice'
+import { fetchPosts, selectFilteredPosts, setSearchTerm } from '../../slices/postSlice'
 import { FaCommentAlt } from 'react-icons/fa'
-import { ImArrowUp, ImArrowDown } from 'react-icons/im'
+import { ImArrowUp, ImArrowDown, ImArrowLeft } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
 import abbreviateNumber from '../../utils/abbreviateNumber'
@@ -16,6 +16,7 @@ const Feed = () => {
     const postStatus = useSelector(state => state.posts.status)
     const filteredPosts = useSelector(selectFilteredPosts)
     const dispatch = useDispatch()
+    
 
     useEffect(() => {
         dispatch(fetchPosts(selectedSubreddit))
@@ -27,7 +28,15 @@ const Feed = () => {
         content = <div className="notification">Loading...</div>
     } else if (postStatus === 'succeeded') {
         if (filteredPosts.length === 0) {
-            content =  <div className="notification">No posts found</div>
+            content =  <>
+                            <div className="notification">No posts found</div>
+                            <Link to="/" onClick={() => dispatch(setSearchTerm(''))}>
+                                <div className="back-link">
+                                    <ImArrowLeft />
+                                     <p>Back</p>  
+                                </div>
+                            </Link>
+                        </>
         } else content = filteredPosts.map((post, index) => (
             <article key={post.id} className="single-post">
                 <div className="post-wrapper">
@@ -54,7 +63,15 @@ const Feed = () => {
             </article>
         ))   
     } else if (postStatus === 'failed') {
-        content = <div className="notification">{error}</div>
+        content = <>
+                    <div className="notification">{error}</div>
+                    <Link to="/" onClick={() => dispatch(setSearchTerm(''))}>
+                        <div className="back-link">
+                            <ImArrowLeft />
+                            <p>Back</p>  
+                        </div>
+                    </Link>
+                </>
     }
     
     return (
