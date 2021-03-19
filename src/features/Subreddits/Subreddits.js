@@ -5,7 +5,7 @@ import './Subreddits.css'
 import { selectSubreddits, fetchSubreddits } from '../../slices/subRedditSlice'
 import IMG from '../../images/reddit-icon.png'
 import { setSelectedSubreddit, setSearchTerm } from '../../slices/postSlice'
-
+import { IoMdArrowDropdown} from 'react-icons/io'
 
 const Subreddits = () => {
     const dispatch = useDispatch()
@@ -22,9 +22,10 @@ const Subreddits = () => {
     let content
 
     if (subredditStatus === 'loading') {
-        content = <div>Loading...</div>
+        content = <div className="notification">Loading...</div>
     } else if (subredditStatus === 'succeeded') {
-        content =  <ul>
+        content =  <div className="subreddits-container">
+        <ul>
                         {subreddits.map((subreddit) => (
                             <Link to="/">
                                 <li key={subreddit.id}>
@@ -39,17 +40,19 @@ const Subreddits = () => {
                             </Link>
                         ))}     
                     </ul>
+                    </div>
     } else if (subredditStatus === 'failed') {
-        content = <div>{error}</div>
+        content = <div className="notification">{error}</div>
     }
 
     return (
-        <>
-            <div id="subreddits-container">
-                 <h2>Subreddits</h2>
-                    {content}
+        <div className="subreddits-section">
+            <div className="subreddits-header">
+                <h2>Subreddits</h2>
+                <IoMdArrowDropdown className="dropdown-arrow" size={18}/>
             </div>
-        </>
+            {content}
+        </div>
     )
 }
 

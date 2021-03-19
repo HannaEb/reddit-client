@@ -2,15 +2,29 @@
 .header-content {
     padding: 0.5em 1em;
     border-bottom: 1px solid grey;
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1em;
+    grid-gap: 1em; */
     background: #FFF;
+}
+
+@media screen and (min-width: 480px) {
+    .header-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1em;
+    }
 }
 
 .logo {
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        padding-bottom: 0.3em; 
+    }
 }
 
 .logo h1 {
@@ -29,8 +43,19 @@
 }
 
 .search-form {
-   width: 300px;
    margin: auto;
+}
+
+@media screen and (min-width: 480px) {
+    .search-form {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-form {
+        width: 220px;
+    }
 }
 
 .search-term {

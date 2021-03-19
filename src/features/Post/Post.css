@@ -7,15 +7,11 @@ a:visited {
     color: inherit;
 }
 
-.post {
-    max-width: 900px;
-}
-
 .post-wrapper {
     border: 1px solid #BCC7D1;
     border-radius: 3px 3px 0 0;
     display: flex;
-    width: 100%;
+    max-width: 100%;
 }
 
 .post-container {
@@ -26,7 +22,7 @@ a:visited {
 }
 
 .post-refs {
-    font-size: 12px;
+    font-size: 0.7em;
     color: #808080;
     padding: 1em 0 ;
 }
@@ -38,21 +34,22 @@ a:visited {
 }
 
 .post-image {
-    max-width: 500px;
+    max-width: 80%;
+    height: auto;
     display: block;
     margin: 0 auto;
     padding: 0.5em 0;
 }
 
 .post-text {
-    font-size: 14px;
+    font-size: 0.8em;
     line-height: 120%;
     padding: 0.5em 0;
 }
 
 .post-comments {
     display: flex;
-    font-size: 12px;
+    font-size: 0.7em;
     color: #808080;
     font-weight: bold;
     padding: 1em 0;
@@ -73,7 +70,7 @@ a:visited {
 }
 
 .vote-count {
-    font-size: 12px;
+    font-size: 0.7em;
     font-weight: bold;
     padding-top: 0.2em;
     padding-bottom: 0.5em;
