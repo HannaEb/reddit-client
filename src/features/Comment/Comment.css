@@ -1,0 +1,26 @@
+.comment {
+    background: #F8FAFB;
+    border: 1px solid #BCC7D1;
+    border-radius: 10px;
+    width: 80%;
+    padding: 0.5em;
+}
+
+.comment-refs {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7em;
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+.comment-created {
+    color: #808080;
+}
+
+.comment-text {
+    font-size: 0.8em;
+    padding-top: 0.2em;
+}
