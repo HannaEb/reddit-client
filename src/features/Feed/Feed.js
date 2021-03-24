@@ -49,7 +49,7 @@ const Feed = () => {
                                 <p className="post-text">{post.selftext.substring(0, 300) + (post.selftext.length > 300 ? "..." : "")}</p>
                             </div>  
                         </Link>
-                            <div className="post-comments">
+                            <div className="post-comments-details">
                                 <FaCommentAlt size={14}/>
                                 <p className="num-comments">{Pluralize('Comment', abbreviateNumber(post.num_comments), true)}</p>
                             </div>
