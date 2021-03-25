@@ -8,7 +8,7 @@ import { ImArrowUp, ImArrowDown, ImArrowLeft } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
 import abbreviateNumber from '../../utils/abbreviateNumber'
-import Comment from '../Comment/Comment'
+// import Comment from '../Comment/Comment'
 
 const Post = ( props ) => {
     const {postId} = props.match.params
@@ -36,7 +36,7 @@ const Post = ( props ) => {
                         <p className="num-comments">{Pluralize('Comment', abbreviateNumber(post.num_comments), true)}</p>
                     </div>
                     <div className="post-comments">
-                        <Comment />
+                        {/* <Comment /> */}
                     </div>
                 </div>
                 <div className="post-votes">

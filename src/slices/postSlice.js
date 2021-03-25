@@ -46,7 +46,7 @@ const postSlice = createSlice({
 export default postSlice.reducer
 export const selectPosts = state => state.posts.posts 
 export const selectPostById = (state, postId) => state.posts.posts.find(post => post.id === postId)
-export const { addPosts, setSelectedSubreddit, setSearchTerm } = postSlice.actions
+export const { getPosts, setSelectedSubreddit, setSearchTerm } = postSlice.actions
 const selectSearchTerm = state => state.posts.searchTerm
 
 export const selectFilteredPosts = createSelector(

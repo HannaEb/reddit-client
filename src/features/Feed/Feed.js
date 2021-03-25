@@ -9,7 +9,6 @@ import { ImArrowUp, ImArrowDown, ImArrowLeft } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
 import abbreviateNumber from '../../utils/abbreviateNumber'
-import Comment from '../Comment/Comment'
 
 const Feed = () => {
     const selectedSubreddit = useSelector(state => state.posts.selectedSubreddit)
@@ -55,7 +54,7 @@ const Feed = () => {
                                 <p className="num-comments">{Pluralize('Comment', abbreviateNumber(post.num_comments), true)}</p>
                             </div>
                             <div className="post-comments">
-                                <Comment />
+                               
                             </div>
                     </div>
                     <div className="post-votes">
