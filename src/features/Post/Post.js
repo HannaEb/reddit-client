@@ -11,9 +11,9 @@ import abbreviateNumber from '../../utils/abbreviateNumber'
 // import Comment from '../Comment/Comment'
 
 const Post = ( props ) => {
-    const {postId} = props.match.params
-
-    const post = useSelector(state => selectPostById(state, postId))
+    // const { postId } = props.match.params
+    // const post = useSelector(state => selectPostById(state, postId))
+    const { post } = props;
 
     if (!post) {
         return (
@@ -29,7 +29,7 @@ const Post = ( props ) => {
                         <p className="post-refs">Posted by {post.author} <TimeAgo date={post.created_utc * 1000} /></p>
                         <h3 className="post-title">{post.title}</h3>
                         <img src={post.url} alt="" className="post-image"></img>
-                        <p className="post-text">{post.selftext}</p>
+                        {/* <p className="post-text">{post.selftext}</p> */}
                     </div>  
                     <div className="post-comments-details">
                         <FaCommentAlt size={14}/>
