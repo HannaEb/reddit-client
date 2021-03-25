@@ -8,7 +8,7 @@ const initialState = {
     error: null
 }
 
-export const fetchSubreddits = createAsyncThunk('subreddits/status', async (subreddit) => {
+export const fetchSubreddits = createAsyncThunk('subreddits/fetchSubreddits', async (subreddit) => {
     const subreddits = await getSubreddits()
     return subreddits
 })

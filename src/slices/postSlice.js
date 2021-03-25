@@ -9,7 +9,7 @@ const initialState = {
     searchTerm: ''
 }
 
-export const fetchPosts = createAsyncThunk('posts/status', async (subreddit) => {
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (subreddit) => {
     const posts = await getSubredditPosts(subreddit);
     return posts 
 })
