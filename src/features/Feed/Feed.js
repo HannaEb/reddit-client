@@ -5,6 +5,7 @@ import '../Post/Post.css'
 import Post from '../Post/Post'
 import { Link } from 'react-router-dom'
 import { fetchPosts, selectFilteredPosts, setSearchTerm } from '../../slices/postSlice'
+import Backlink from '../../components/Backlink/Backlink'
 import { FaCommentAlt } from 'react-icons/fa'
 import { ImArrowUp, ImArrowDown, ImArrowLeft } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
@@ -32,12 +33,7 @@ const Feed = () => {
         return (
             <>
                 <div className="notification">{error}</div>
-                <Link to="/" onClick={() => dispatch(setSearchTerm(''))}>
-                    <div className="back-link">
-                        <ImArrowLeft />
-                        <p>Back</p>  
-                    </div>
-                </Link>
+                 <Backlink onClick={() => dispatch(setSearchTerm(''))} />
             </>
         )
     }
@@ -46,12 +42,7 @@ const Feed = () => {
         return (
             <>
                 <div className="notification">No posts found</div>
-                <Link to="/" onClick={() => dispatch(setSearchTerm(''))}>
-                    <div className="back-link">
-                        <ImArrowLeft />
-                        <p>Back</p>
-                    </div>
-                </Link>
+                <Backlink onClick={() => dispatch(setSearchTerm(''))} />
             </>    
         )
     }

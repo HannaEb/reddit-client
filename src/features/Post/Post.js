@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 import './Post.css'
 import { selectPostById } from '../../slices/postSlice'
 import { FaCommentAlt } from 'react-icons/fa'
@@ -8,6 +7,7 @@ import { ImArrowUp, ImArrowDown, ImArrowLeft } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
 import abbreviateNumber from '../../utils/abbreviateNumber'
+import Backlink from '../../components/Backlink/Backlink'
 // import Comment from '../Comment/Comment'
 
 const Post = ( props ) => {
@@ -17,7 +17,10 @@ const Post = ( props ) => {
 
     if (!post) {
         return (
-            <div className="notification">Post not found</div>
+            <>
+                <div className="notification">Post not found</div>
+                <Backlink />
+            </>
         )
     }
 
@@ -29,7 +32,7 @@ const Post = ( props ) => {
                         <p className="post-refs">Posted by {post.author} <TimeAgo date={post.created_utc * 1000} /></p>
                         <h3 className="post-title">{post.title}</h3>
                         <img src={post.url} alt="" className="post-image"></img>
-                        {/* <p className="post-text">{post.selftext}</p> */}
+                        <p className="post-text">{post.selftext}</p>
                     </div>  
                     <div className="post-comments-details">
                         <FaCommentAlt size={14}/>
@@ -44,14 +47,7 @@ const Post = ( props ) => {
                         <p className="vote-count">{abbreviateNumber(post.ups)}</p>
                     <ImArrowDown className="vote-arrow" />
                 </div>
-
-            </div>
-            <Link to="/">
-                <div className="back-link">
-                    <ImArrowLeft />
-                    <p>Back</p>  
-                </div>
-            </Link>
+            </div>    
         </article>
     )
 }
