@@ -3,14 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import './Feed.css'
 import '../Post/Post.css'
 import Post from '../Post/Post'
-import { Link } from 'react-router-dom'
 import { fetchPosts, selectFilteredPosts, setSearchTerm } from '../../slices/postSlice'
 import Backlink from '../../components/Backlink/Backlink'
-import { FaCommentAlt } from 'react-icons/fa'
-import { ImArrowUp, ImArrowDown, ImArrowLeft } from 'react-icons/im'
-import TimeAgo from 'react-timeago'
-import Pluralize from 'pluralize'
-import abbreviateNumber from '../../utils/abbreviateNumber'
 
 const Feed = () => {
     const selectedSubreddit = useSelector(state => state.posts.selectedSubreddit)
