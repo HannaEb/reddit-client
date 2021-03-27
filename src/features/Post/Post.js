@@ -8,12 +8,16 @@ import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
 import abbreviateNumber from '../../utils/abbreviateNumber'
 import Backlink from '../../components/Backlink/Backlink'
-// import Comment from '../Comment/Comment'
 
 const Post = ( props ) => {
+    
+    const { post } = props;
+    
+    // const PostPage = ({ match }) => {
+//     const { postId } = match.params
+//     const post = useSelector(state => selectPostById(state, postId))
     // const { postId } = props.match.params
     // const post = useSelector(state => selectPostById(state, postId))
-    const { post } = props;
 
     if (!post) {
         return (

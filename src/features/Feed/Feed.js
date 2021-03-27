@@ -5,6 +5,8 @@ import '../Post/Post.css'
 import Post from '../Post/Post'
 import { fetchPosts, selectFilteredPosts, setSearchTerm } from '../../slices/postSlice'
 import Backlink from '../../components/Backlink/Backlink'
+import { Link } from 'react-router-dom'
+
 
 const Feed = () => {
     const selectedSubreddit = useSelector(state => state.posts.selectedSubreddit)
@@ -43,8 +45,10 @@ const Feed = () => {
     
     return (
         <>
-            {filteredPosts.map((post, index) => (
-                <Post key={post.id} post={post} />
+            {filteredPosts.map((post) => (
+                <Link to={`/posts/${post.id}`}>
+                    <Post post={post} />
+                </Link>
             ))}
         </>
     )
