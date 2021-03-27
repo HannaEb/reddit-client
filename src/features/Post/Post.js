@@ -1,7 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import './Post.css'
-import { selectPostById } from '../../slices/postSlice'
 import { FaCommentAlt } from 'react-icons/fa'
 import { ImArrowUp, ImArrowDown, ImArrowLeft } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
@@ -11,13 +9,7 @@ import Backlink from '../../components/Backlink/Backlink'
 
 const Post = ( props ) => {
     
-    const { post } = props;
-    
-    // const PostPage = ({ match }) => {
-//     const { postId } = match.params
-//     const post = useSelector(state => selectPostById(state, postId))
-    // const { postId } = props.match.params
-    // const post = useSelector(state => selectPostById(state, postId))
+    const post = props.post
 
     if (!post) {
         return (
@@ -29,7 +21,7 @@ const Post = ( props ) => {
     }
 
     return (
-        <article key={post.id} className="single-post">
+        <article key={post.title} className="single-post">
             <div className="post-wrapper">
                 <div className="post-container">
                     <div className="post-content">
@@ -56,4 +48,4 @@ const Post = ( props ) => {
     )
 }
 
-export default Post
+export default Post;
