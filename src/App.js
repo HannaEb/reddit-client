@@ -4,7 +4,7 @@ import './App.css'
 import Header from './features/Header/Header'
 import Subreddits from './features/Subreddits/Subreddits'
 import Feed from './features/Feed/Feed'
-import Post from './features/Post/Post'
+import PostPage from './features/Post/PostPage'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
             <main>
               <Switch>
                 <Route exact path="/" component={Feed} />
-                <Route exact path="/posts/:postId" component={Post} />
+                <Route exact path="/posts/:postId" component={PostPage} />
                 <Redirect to="/" />
               </Switch>
             </main>
