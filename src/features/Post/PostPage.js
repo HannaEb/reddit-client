@@ -2,10 +2,12 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Post from './Post'
 import Backlink from '../../components/Backlink/Backlink'
+import { selectPostById } from '../../slices/postSlice'
 
 const PostPage = ({ match }) => {
     const { postId } = match.params
-    const post = useSelector(state => state.posts.posts.find(post => post.id === postId))
+    const post = useSelector(state => selectPostById(state, postId))
+
 
     if (!post) {
         return (
@@ -20,7 +22,6 @@ const PostPage = ({ match }) => {
         <>
             <Backlink />
             <Post post={post} />
-            
         </>
     )
 }
