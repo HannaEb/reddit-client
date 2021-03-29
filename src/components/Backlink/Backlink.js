@@ -14,4 +14,4 @@ const Backlink = (props) => {
     )
 }
 
-export default Backlink
+export default Backlink;

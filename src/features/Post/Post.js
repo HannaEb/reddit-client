@@ -1,24 +1,14 @@
 import React from 'react'
 import './Post.css'
 import { FaCommentAlt } from 'react-icons/fa'
-import { ImArrowUp, ImArrowDown, ImArrowLeft } from 'react-icons/im'
+import { ImArrowUp, ImArrowDown } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
 import abbreviateNumber from '../../utils/abbreviateNumber'
-import Backlink from '../../components/Backlink/Backlink'
 
 const Post = ( props ) => {
     
-    const post = props.post
-
-    if (!post) {
-        return (
-            <>
-                <div className="notification">Post not found</div>
-                <Backlink />
-            </>
-        )
-    }
+    const { post } = props
 
     return (
         <article key={post.title} className="single-post">
