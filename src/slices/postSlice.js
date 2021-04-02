@@ -5,12 +5,13 @@ const initialState = {
     posts: [],
     status: 'idle',
     error: null,
-    selectedSubreddit: '/r/funny/',
+    selectedSubreddit: '/r/funny',
     searchTerm: ''
 }
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (subreddit) => {
     const posts = await getSubredditPosts(subreddit);
+    const test = posts.map(post => post.body)
     return posts 
 })
 
@@ -30,23 +31,23 @@ const postSlice = createSlice({
     },
     extraReducers: {
         [fetchPosts.pending]: (state, action) => {
-            state.status = 'loading'
+            state.postStatus = 'loading'
         },
         [fetchPosts.fulfilled]: (state, action) => {
-            state.status ='succeeded'
+            state.postStatus ='succeeded'
             state.posts = action.payload;
         },
         [fetchPosts.rejected]: (state, action) => {
-            state.status = 'failed'
+            state.postStatus = 'failed'
             state.error = action.error.message
         }
     }
 })
 
 export default postSlice.reducer
-export const selectPosts = state => state.posts.posts 
 export const selectPostById = (state, postId) => state.posts.posts.find(post => post.id === postId)
 export const { getPosts, setSelectedSubreddit, setSearchTerm } = postSlice.actions
+const selectPosts = state => state.posts.posts 
 const selectSearchTerm = state => state.posts.searchTerm
 
 export const selectFilteredPosts = createSelector(
