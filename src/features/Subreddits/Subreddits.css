@@ -1,4 +1,10 @@
 @media screen and (max-width: 780px) {
+    .subreddits-section {
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 780px) {
     .subreddits-container ul {
         display: flex;
         flex-wrap: wrap;    

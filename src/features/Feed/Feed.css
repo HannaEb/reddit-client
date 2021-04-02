@@ -2,9 +2,5 @@
     margin-bottom: 1em;
 }
 
-@media screen and (max-width: 780px) {
-    .single-post {
-        margin-top: 1em;
-    }
-}
+
 
