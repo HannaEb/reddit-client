@@ -2,9 +2,6 @@
 .header-content {
     padding: 0.5em 1em;
     border-bottom: 1px solid grey;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1em; */
     background: #FFF;
 }
 
@@ -83,17 +80,3 @@
 .search-btn:hover {
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

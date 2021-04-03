@@ -5,9 +5,9 @@ import '../Post/Post.css'
 import Post from '../Post/Post'
 import { fetchPosts, selectFilteredPosts, setSearchTerm } from '../../slices/postSlice'
 import { setSelectedPermalink } from '../../slices/commentSlice'
-import Backlink from '../../components/Backlink/Backlink'
 import { Link } from 'react-router-dom'
 import Card from '../../components/Card/Card'
+import Backlink from '../../components/Backlink/Backlink'
 
 const Feed = () => {
     const selectedSubreddit = useSelector(state => state.posts.selectedSubreddit)
