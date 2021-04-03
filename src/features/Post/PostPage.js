@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Post from './Post'
 import Backlink from '../../components/Backlink/Backlink'
 import { selectPostById } from '../../slices/postSlice'
@@ -11,6 +11,9 @@ const PostPage = ({ match }) => {
     const { postId } = match.params
     const { postPermalink } = match.params
     const post = useSelector(state => selectPostById(state, postId))
+    const dispatch = useDispatch()
+
+    
 
     if (!post) {
         return (
@@ -23,7 +26,7 @@ const PostPage = ({ match }) => {
 
     return (
         <> 
-            <Backlink />
+            <Backlink onClick={() => dispatch(setSelectedPermalink(''))} />
             <Card>
                 <Post post={post} />
                 <CommentsList />
