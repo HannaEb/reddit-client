@@ -3,11 +3,14 @@ import { useSelector } from 'react-redux'
 import Post from './Post'
 import Backlink from '../../components/Backlink/Backlink'
 import { selectPostById } from '../../slices/postSlice'
+import { setSelectedPermalink } from '../../slices/commentSlice'
+import CommentsList from '../Comment/CommentsList'
+import Card from '../../components/Card/Card'
 
 const PostPage = ({ match }) => {
     const { postId } = match.params
+    const { postPermalink } = match.params
     const post = useSelector(state => selectPostById(state, postId))
-
 
     if (!post) {
         return (
@@ -19,11 +22,14 @@ const PostPage = ({ match }) => {
     }
 
     return (
-        <>
+        <> 
             <Backlink />
-            <Post post={post} />
+            <Card>
+                <Post post={post} />
+                <CommentsList />
+            </Card>
         </>
     )
 }
 
-export default PostPage
+export default PostPage;
