@@ -5,10 +5,14 @@ import { ImArrowUp, ImArrowDown } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
 import abbreviateNumber from '../../utils/abbreviateNumber'
+import CommentsList from '../Comment/CommentsList'
+import { setSelectedPermalink } from '../../slices/commentSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Post = ( props ) => {
-    
     const { post } = props
+    const dispatch = useDispatch()
 
     return (
         <article key={post.title} className="single-post">
@@ -24,16 +28,14 @@ const Post = ( props ) => {
                         <FaCommentAlt size={14}/>
                         <p className="num-comments">{Pluralize('Comment', abbreviateNumber(post.num_comments), true)}</p>
                     </div>
-                    <div className="post-comments">
-                        {/* <Comment /> */}
-                    </div>
                 </div>
                 <div className="post-votes">
                     <ImArrowUp className="vote-arrow" />
                         <p className="vote-count">{abbreviateNumber(post.ups)}</p>
                     <ImArrowDown className="vote-arrow" />
                 </div>
-            </div>    
+                <div>{}</div>
+            </div>  
         </article>
     )
 }

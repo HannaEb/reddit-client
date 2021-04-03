@@ -8,8 +8,8 @@ a:visited {
 }
 
 .post-wrapper {
-    border: 1px solid #BCC7D1;
-    border-radius: 3px 3px 0 0;
+    /* border: 1px solid #BCC7D1;
+    border-radius: 3px 3px 0 0; */
     display: flex;
     max-width: 100%;
 }
@@ -17,7 +17,7 @@ a:visited {
 .post-container {
     border-radius: 3px 0 0 0;
     width: 100%;
-    background: #FFF;
+    /* background: #FFF; */
     padding: 0 1em;
 }
 
