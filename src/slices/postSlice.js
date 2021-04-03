@@ -11,11 +11,10 @@ const initialState = {
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (subreddit) => {
     const posts = await getSubredditPosts(subreddit);
-    const test = posts.map(post => post.body)
     return posts 
-})
+});  
 
-const postSlice = createSlice({
+  const postSlice = createSlice({
     name: 'posts',
     initialState,
     reducers: {
@@ -31,14 +30,14 @@ const postSlice = createSlice({
     },
     extraReducers: {
         [fetchPosts.pending]: (state, action) => {
-            state.postStatus = 'loading'
+            state.status = 'loading'
         },
         [fetchPosts.fulfilled]: (state, action) => {
-            state.postStatus ='succeeded'
+            state.status ='succeeded'
             state.posts = action.payload;
         },
         [fetchPosts.rejected]: (state, action) => {
-            state.postStatus = 'failed'
+            state.status = 'failed'
             state.error = action.error.message
         }
     }
