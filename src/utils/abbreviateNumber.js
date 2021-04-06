@@ -9,4 +9,4 @@ const abbreviateNumber = num => {
     }
 }
 
-export default abbreviateNumber
+export default abbreviateNumber;

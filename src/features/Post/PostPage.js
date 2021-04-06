@@ -9,11 +9,8 @@ import Card from '../../components/Card/Card'
 
 const PostPage = ({ match }) => {
     const { postId } = match.params
-    const { postPermalink } = match.params
     const post = useSelector(state => selectPostById(state, postId))
     const dispatch = useDispatch()
-
-    
 
     if (!post) {
         return (

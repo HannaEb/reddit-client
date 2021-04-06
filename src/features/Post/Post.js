@@ -5,15 +5,10 @@ import { ImArrowUp, ImArrowDown } from 'react-icons/im'
 import TimeAgo from 'react-timeago'
 import Pluralize from 'pluralize'
 import abbreviateNumber from '../../utils/abbreviateNumber'
-import CommentsList from '../Comment/CommentsList'
-import { setSelectedPermalink } from '../../slices/commentSlice'
-import { useSelector, useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 const Post = ( props ) => {
     const { post } = props
-    const dispatch = useDispatch()
-
+   
     return (
         <article key={post.title} className="single-post">
             <div className="post-wrapper">
