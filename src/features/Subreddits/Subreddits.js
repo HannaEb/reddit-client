@@ -33,7 +33,7 @@ const Subreddits = () => {
                                             [dispatch(setSelectedSubreddit(subreddit.url)),
                                             dispatch(setSearchTerm(''))]
                                             }>
-                                        <img src={subreddit.icon_img || IMG} className="subreddit-icon"></img>
+                                        <img src={subreddit.icon_img || IMG} className="subreddit-icon" alt=""></img>
                                         <div>{subreddit.display_name}</div>
                                     </button>
                                 </li>
