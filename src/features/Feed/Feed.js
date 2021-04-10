@@ -47,7 +47,7 @@ const Feed = () => {
     return (
         <>
             {filteredPosts.map((post) => (
-                <Link to={`/posts/${post.id}`} onClick={() => dispatch(setSelectedPermalink(post.permalink))}>
+                <Link key={post.id} to={`/posts/${post.id}`} onClick={() => dispatch(setSelectedPermalink(post.permalink))}>
                     <Card>
                         <Post post={post} />
                     </Card>

@@ -27,8 +27,8 @@ const Subreddits = () => {
         content =  <div className="subreddits-container">
         <ul>
                         {subreddits.map((subreddit) => (
-                            <Link to="/">
-                                <li key={subreddit.id}>
+                            <Link to="/" key={subreddit.id}>
+                                <li>
                                     <button onClick={() => 
                                             [dispatch(setSelectedSubreddit(subreddit.url)),
                                             dispatch(setSearchTerm(''))]
