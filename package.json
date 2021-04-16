@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "enzyme-adapter-react-17-updated": "^1.0.2"
+    "enzyme-adapter-react-17-updated": "^1.0.2",
+    "redux-mock-store": "^1.5.4"
   }
 }
