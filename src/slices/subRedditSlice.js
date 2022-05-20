@@ -15,7 +15,7 @@ export const fetchSubreddits = createAsyncThunk(
   }
 );
 
-const subRedditSlice = createSlice({
+const subredditSlice = createSlice({
   name: "subreddits",
   initialState,
   reducers: {
@@ -39,5 +39,5 @@ const subRedditSlice = createSlice({
 });
 
 export const selectSubreddits = (state) => state.subreddits.subreddits;
-export const { addSubreddits } = subRedditSlice.actions;
-export default subRedditSlice.reducer;
+export const { addSubreddits } = subredditSlice.actions;
+export default subredditSlice.reducer;

@@ -1,12 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import subRedditReducer from "../slices/subRedditSlice";
+import subredditReducer from "../slices/subredditSlice";
 import postReducer from "../slices/postSlice";
 import commentReducer from "../slices/commentSlice";
 
 export default configureStore({
   reducer: combineReducers({
     posts: postReducer,
-    subreddits: subRedditReducer,
+    subreddits: subredditReducer,
     comments: commentReducer,
   }),
 });

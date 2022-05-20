@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Subreddits.css";
-import { selectSubreddits, fetchSubreddits } from "../../slices/subRedditSlice";
+import { selectSubreddits, fetchSubreddits } from "../../slices/subredditSlice";
 import IMG from "../../images/reddit-icon.png";
 import { setSelectedSubreddit, setSearchTerm } from "../../slices/postSlice";
 import { IoMdArrowDropdown } from "react-icons/io";
