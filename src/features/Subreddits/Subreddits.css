@@ -1,83 +1,83 @@
 @media screen and (max-width: 780px) {
-    .subreddits-section {
-        margin-bottom: 1em;
-    }
+  .subreddits-section {
+    margin-bottom: 1em;
+  }
 }
 
 @media screen and (max-width: 780px) {
-    .subreddits-container ul {
-        display: flex;
-        flex-wrap: wrap;    
-    }
+  .subreddits-container ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .subreddits-container ul>* {
-        flex: 1 1 auto;
-    }   
+  .subreddits-container ul > * {
+    flex: 1 1 auto;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .subreddits-container {
-        display: none;
-    }
+  .subreddits-container {
+    display: none;
+  }
 }
 
 .subreddits-header {
-    background: #F8FAFB;
-    text-align: center;
-    padding: 1em;
-    color: #2F3A45;
-    font-weight: bold;
-    border-radius: 3px 3px 0 0;
+  background: #f8fafb;
+  text-align: center;
+  padding: 1em;
+  color: #2f3a45;
+  font-weight: bold;
+  border-radius: 3px 3px 0 0;
 }
 
 @media screen and (max-width: 480px) {
-    .subreddits-section:hover > .subreddits-container {
-        display: block;
-    }
+  .subreddits-section:hover > .subreddits-container {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 480px) {
-    .dropdown-arrow {
-        display: none;
-    }
+  .dropdown-arrow {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .subreddits-header {
-        display: inline-flex;
-        width: 100%;
-    }
+  .subreddits-header {
+    display: inline-flex;
+    width: 100%;
+  }
 
-    .subreddits-header:hover {
-        cursor: pointer;
-    }
+  .subreddits-header:hover {
+    cursor: pointer;
+  }
 
-    h2 {
-        padding-right: 0.2;
-        padding-top: 0.2em;
-    }
+  h2 {
+    padding-right: 0.2;
+    padding-top: 0.2em;
+  }
 }
 
 li button {
-    width: 100%;
-    cursor: pointer;
-    border: none;
-    border-top: 1px solid #DAE0E6;
-    background-color: #FFF;
-    padding: 0.5em;
-    padding-top: 0.6em;
-    display: flex;
-    align-items: center;
-    font-size: 0.8em;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  border-top: 1px solid #dae0e6;
+  background-color: #fff;
+  padding: 0.5em;
+  padding-top: 0.6em;
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
 }
 
 li button:hover {
-    background: #F8FAFB;
+  background: #f8fafb;
 }
 
 .subreddit-icon {
-    height: 20px;
-    width: auto;
-    padding: 0 0.5em;
-    border-radius: 50%;
+  height: 20px;
+  width: auto;
+  padding: 0 0.5em;
+  border-radius: 50%;
 }

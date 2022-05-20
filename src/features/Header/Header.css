@@ -1,82 +1,81 @@
-
 .header-content {
-    padding: 0.5em 1em;
-    border-bottom: 1px solid grey;
-    background: #FFF;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid grey;
+  background: #fff;
 }
 
 @media screen and (min-width: 480px) {
-    .header-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 1em;
-    }
+  .header-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+  }
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 480px) {
-    .logo {
-        padding-bottom: 0.3em; 
-    }
+  .logo {
+    padding-bottom: 0.3em;
+  }
 }
 
 .logo h1 {
-    padding-left: 0.5em;
-    font-size: 1.2em;
-    font-weight: bold;
+  padding-left: 0.5em;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .logo h1 span {
-    color: #FA014E;
-    font-style: italic;
+  color: #fa014e;
+  font-style: italic;
 }
 
 .logo-icon {
-    color: #FA014E;
+  color: #fa014e;
 }
 
 .search-form {
-   margin: auto;
+  margin: auto;
 }
 
 @media screen and (min-width: 480px) {
-    .search-form {
-        width: 280px;
-    }
+  .search-form {
+    width: 280px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .search-form {
-        width: 220px;
-    }
+  .search-form {
+    width: 220px;
+  }
 }
 
 .search-term {
-   height: 2.5em;
-   border: 1px solid grey;
-   border-right: none;
-   border-radius: 5px 0 0 5px;
-   padding-left: 0.5em;
-   vertical-align: top;
-   width: 90%
+  height: 2.5em;
+  border: 1px solid grey;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  padding-left: 0.5em;
+  vertical-align: top;
+  width: 90%;
 }
 
 .search-btn {
-   height: 2.5em;
-   background: #FFF;
-   border: 1px solid grey;
-   border-left: none;
-   border-radius: 0 5px 5px 0;
-   vertical-align: top;
-   padding-top: 0.3em;
-   padding-right: 0.7em;
-   width: 10%;
+  height: 2.5em;
+  background: #fff;
+  border: 1px solid grey;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  vertical-align: top;
+  padding-top: 0.3em;
+  padding-right: 0.7em;
+  width: 10%;
 }
 
 .search-btn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }

@@ -1,13 +1,13 @@
 .back-link {
-	display: flex;
-	align-items: center;
-	font-size: 0.9em;
-	color: #2F3A45;
-	padding: 1em;
-	background: #F8FAFB;
-	border: 1px solid #BCC7D1;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  color: #2f3a45;
+  padding: 1em;
+  background: #f8fafb;
+  border: 1px solid #bcc7d1;
 }
 
 .back-link p {
-	padding-left: 0.5em;
+  padding-left: 0.5em;
 }
