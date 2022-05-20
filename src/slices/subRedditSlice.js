@@ -9,7 +9,7 @@ const initialState = {
 
 export const fetchSubreddits = createAsyncThunk(
   "subreddits/fetchSubreddits",
-  async (subreddit) => {
+  async () => {
     const subreddits = await getSubreddits();
     return subreddits;
   }
