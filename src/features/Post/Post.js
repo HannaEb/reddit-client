@@ -33,7 +33,6 @@ const Post = (props) => {
           <p className="vote-count">{abbreviateNumber(post.ups)}</p>
           <ImArrowDown className="vote-arrow" />
         </div>
-        <div>{}</div>
       </div>
     </article>
   );

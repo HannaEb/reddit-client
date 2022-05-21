@@ -10,7 +10,6 @@ import {
 } from "../../slices/postSlice";
 import { setSelectedPermalink } from "../../slices/commentSlice";
 import { Link } from "react-router-dom";
-import Card from "../../components/Card/Card";
 import Backlink from "../../components/Backlink/Backlink";
 
 const Feed = () => {
@@ -56,10 +55,9 @@ const Feed = () => {
           to={`/posts/${post.id}`}
           onClick={() => dispatch(setSelectedPermalink(post.permalink))}
         >
-          <Card>
+          <div className="post">
             <Post post={post} />
-            <div>{`${post}`}</div>
-          </Card>
+          </div>
         </Link>
       ))}
     </>

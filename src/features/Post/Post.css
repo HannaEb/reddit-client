@@ -7,6 +7,13 @@ a:visited {
   color: inherit;
 }
 
+.post {
+  border: 1px solid #bcc7d1;
+  border-radius: 3px 3px 0 0;
+  margin-bottom: 1em;
+  background: #fff;
+}
+
 .post-wrapper {
   border-bottom: 1px solid #bcc7d1;
   display: flex;
@@ -14,7 +21,6 @@ a:visited {
 }
 
 .post-container {
-  border-radius: 3px 0 0 0;
   width: 100%;
   padding: 0 1em;
 }

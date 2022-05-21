@@ -5,7 +5,6 @@ import Backlink from "../../components/Backlink/Backlink";
 import { selectPostById } from "../../slices/postSlice";
 import { setSelectedPermalink } from "../../slices/commentSlice";
 import CommentsList from "../Comment/CommentsList";
-import Card from "../../components/Card/Card";
 
 const PostPage = ({ match }) => {
   const { postId } = match.params;
@@ -24,10 +23,10 @@ const PostPage = ({ match }) => {
   return (
     <>
       <Backlink onClick={() => dispatch(setSelectedPermalink(""))} />
-      <Card>
+      <div className="post">
         <Post post={post} />
         <CommentsList />
-      </Card>
+      </div>
     </>
   );
 };
