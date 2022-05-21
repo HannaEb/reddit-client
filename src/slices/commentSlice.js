@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const fetchComments = createAsyncThunk(
-  "posts/fetchComments",
+  "comments/fetchComments",
   async (permalink) => {
     const comments = await getPostComments(permalink);
     return comments;

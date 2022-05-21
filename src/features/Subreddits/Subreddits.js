@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Subreddits.css";
 import { selectSubreddits, fetchSubreddits } from "../../slices/subredditSlice";
-import IMG from "../../images/reddit-icon.png";
+import icon from "../../images/reddit-icon.png";
 import { setSelectedSubreddit, setSearchTerm } from "../../slices/postSlice";
 import { IoMdArrowDropdown } from "react-icons/io";
 
@@ -37,7 +37,7 @@ const Subreddits = () => {
                   ]}
                 >
                   <img
-                    src={subreddit.icon_img || IMG}
+                    src={subreddit.icon_img || icon}
                     className="subreddit-icon"
                     alt=""
                   ></img>

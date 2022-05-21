@@ -55,6 +55,7 @@ export const selectPostById = (state, postId) =>
   state.posts.posts.find((post) => post.id === postId);
 export const { getPosts, setSelectedSubreddit, setSearchTerm } =
   postSlice.actions;
+
 const selectPosts = (state) => state.posts.posts;
 const selectSearchTerm = (state) => state.posts.searchTerm;
 
