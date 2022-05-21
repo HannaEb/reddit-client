@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import "./Feed.css";
 import "../Post/Post.css";
 import Post from "../Post/Post";
 import {
