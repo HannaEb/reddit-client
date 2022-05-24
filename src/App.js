@@ -10,11 +10,13 @@ import Header from "./features/Header/Header";
 import Subreddits from "./features/Subreddits/Subreddits";
 import Feed from "./features/Feed/Feed";
 import PostPage from "./features/Post/PostPage";
+import Scroll from "./components/Scroll/Scroll";
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Scroll />
         <Header />
         <section>
           <aside>
