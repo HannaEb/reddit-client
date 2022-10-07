@@ -1,6 +1,6 @@
 import React from "react";
-import "./Comment.css";
 import TimeAgo from "react-timeago";
+import "./Comment.css";
 
 const Comment = (props) => {
   const { comment } = props;

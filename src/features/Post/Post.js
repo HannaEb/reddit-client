@@ -1,9 +1,9 @@
 import React from "react";
-import "./Post.css";
-import { FaCommentAlt } from "react-icons/fa";
-import { ImArrowUp, ImArrowDown } from "react-icons/im";
 import TimeAgo from "react-timeago";
 import Pluralize from "pluralize";
+import { FaCommentAlt } from "react-icons/fa";
+import { ImArrowUp, ImArrowDown } from "react-icons/im";
+import "./Post.css";
 import abbreviateNumber from "../../utils/abbreviateNumber";
 
 const Post = (props) => {
