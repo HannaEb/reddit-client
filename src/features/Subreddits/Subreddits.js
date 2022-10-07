@@ -1,29 +1,29 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { IoMdArrowDropdown } from "react-icons/io";
+import icon from "../../images/reddit-icon.png";
 import "./Subreddits.css";
 import { selectSubreddits, fetchSubreddits } from "../../slices/subredditSlice";
-import icon from "../../images/reddit-icon.png";
 import { setSelectedSubreddit, setSearchTerm } from "../../slices/postSlice";
-import { IoMdArrowDropdown } from "react-icons/io";
 
 const Subreddits = () => {
-  const dispatch = useDispatch();
   const subreddits = useSelector(selectSubreddits);
-  const subredditStatus = useSelector((state) => state.subreddits.status);
+  const status = useSelector((state) => state.subreddits.status);
   const error = useSelector((state) => state.subreddits.error);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (subredditStatus === "idle") {
+    if (status === "idle") {
       dispatch(fetchSubreddits());
     }
-  }, [subredditStatus, dispatch]);
+  }, [status, dispatch]);
 
   let content;
 
-  if (subredditStatus === "loading") {
+  if (status === "loading") {
     content = <div className="notification">Loading...</div>;
-  } else if (subredditStatus === "succeeded") {
+  } else if (status === "succeeded") {
     content = (
       <div className="subreddits-container">
         <ul>
@@ -49,7 +49,7 @@ const Subreddits = () => {
         </ul>
       </div>
     );
-  } else if (subredditStatus === "failed") {
+  } else if (status === "failed") {
     content = <div className="notification">{error}</div>;
   }
 

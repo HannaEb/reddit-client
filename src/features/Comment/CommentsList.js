@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Comment from "./Comment";
 import "./Comment.css";
+import Comment from "./Comment";
 import { fetchComments, selectComments } from "../../slices/commentSlice";
 
 const CommentsList = () => {
   const selectedPermalink = useSelector(
     (state) => state.comments.selectedPermalink
   );
-  const error = useSelector((state) => state.comments.error);
-  const status = useSelector((state) => state.comments.status);
   const comments = useSelector(selectComments);
+  const status = useSelector((state) => state.comments.status);
+  const error = useSelector((state) => state.comments.error);
   const dispatch = useDispatch();
 
   useEffect(() => {

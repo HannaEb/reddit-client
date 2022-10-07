@@ -1,23 +1,23 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import "../Post/Post.css";
 import Post from "../Post/Post";
+import Backlink from "../../components/Backlink/Backlink";
+import { setSelectedPermalink } from "../../slices/commentSlice";
 import {
   fetchPosts,
   selectFilteredPosts,
   setSearchTerm,
 } from "../../slices/postSlice";
-import { setSelectedPermalink } from "../../slices/commentSlice";
-import { Link } from "react-router-dom";
-import Backlink from "../../components/Backlink/Backlink";
 
 const Feed = () => {
   const selectedSubreddit = useSelector(
     (state) => state.posts.selectedSubreddit
   );
-  const error = useSelector((state) => state.posts.error);
-  const status = useSelector((state) => state.posts.status);
   const filteredPosts = useSelector(selectFilteredPosts);
+  const status = useSelector((state) => state.posts.status);
+  const error = useSelector((state) => state.posts.error);
   const dispatch = useDispatch();
 
   useEffect(() => {
