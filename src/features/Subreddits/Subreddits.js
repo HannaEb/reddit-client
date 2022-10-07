@@ -20,7 +20,7 @@ const Subreddits = () => {
   }, [status, dispatch]);
 
   if (status === "loading") {
-    return <div className="notification">Loading...</div>;
+    return <div className="notification">Loading subreddits...</div>;
   }
 
   if (status === "failed") {
