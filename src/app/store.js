@@ -9,4 +9,10 @@ export default configureStore({
     posts: postReducer,
     comments: commentReducer,
   }),
+  // Remove development warning in console
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      immutableCheck: false,
+      serializableCheck: false,
+    }),
 });
