@@ -10,7 +10,7 @@ const Post = (props) => {
   const { post } = props;
 
   return (
-    <article key={post.id} className="single-post">
+    <article className="single-post">
       <div className="post-wrapper">
         <div className="post-container">
           <div className="post-content">
