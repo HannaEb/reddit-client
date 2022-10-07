@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Post from "./Post";
 import Backlink from "../../components/Backlink/Backlink";
 import { selectPostById } from "../../slices/postSlice";
-import { setSelectedPermalink } from "../../slices/commentSlice";
+import { setSelectedPost } from "../../slices/commentSlice";
 import CommentsList from "../Comment/CommentsList";
 
 const PostPage = ({ match }) => {
@@ -22,7 +22,7 @@ const PostPage = ({ match }) => {
 
   return (
     <>
-      <Backlink onClick={() => dispatch(setSelectedPermalink(""))} />
+      <Backlink onClick={() => dispatch(setSelectedPost(""))} />
       <div className="post">
         <Post post={post} />
         <CommentsList />

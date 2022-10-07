@@ -5,17 +5,15 @@ import Comment from "./Comment";
 import { fetchComments, selectComments } from "../../slices/commentSlice";
 
 const CommentsList = () => {
-  const selectedPermalink = useSelector(
-    (state) => state.comments.selectedPermalink
-  );
+  const selectedPost = useSelector((state) => state.comments.selectedPost);
   const comments = useSelector(selectComments);
   const status = useSelector((state) => state.comments.status);
   const error = useSelector((state) => state.comments.error);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchComments(selectedPermalink));
-  }, [selectedPermalink, dispatch]);
+    dispatch(fetchComments(selectedPost));
+  }, [selectedPost, dispatch]);
 
   if (status === "loading") {
     return <div className="notification">Loading comments...</div>;

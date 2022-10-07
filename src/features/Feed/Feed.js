@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../Post/Post.css";
 import Post from "../Post/Post";
 import Backlink from "../../components/Backlink/Backlink";
-import { setSelectedPermalink } from "../../slices/commentSlice";
+import { setSelectedPost } from "../../slices/commentSlice";
 import {
   fetchPosts,
   selectFilteredPosts,
@@ -52,7 +52,7 @@ const Feed = () => {
         <Link
           key={post.id}
           to={`/posts/${post.id}`}
-          onClick={() => dispatch(setSelectedPermalink(post.permalink))}
+          onClick={() => dispatch(setSelectedPost(post.permalink))}
         >
           <div className="post">
             <Post post={post} />

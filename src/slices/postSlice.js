@@ -50,14 +50,14 @@ const postSlice = createSlice({
   },
 });
 
-export default postSlice.reducer;
-export const selectPostById = (state, postId) =>
-  state.posts.posts.find((post) => post.id === postId);
+const selectPosts = (state) => state.posts.posts;
+const selectSearchTerm = (state) => state.posts.searchTerm;
+
 export const { getPosts, setSelectedSubreddit, setSearchTerm } =
   postSlice.actions;
 
-const selectPosts = (state) => state.posts.posts;
-const selectSearchTerm = (state) => state.posts.searchTerm;
+export const selectPostById = (state, postId) =>
+  state.posts.posts.find((post) => post.id === postId);
 
 export const selectFilteredPosts = createSelector(
   [selectPosts, selectSearchTerm],
@@ -71,3 +71,5 @@ export const selectFilteredPosts = createSelector(
     return posts;
   }
 );
+
+export default postSlice.reducer;

@@ -5,13 +5,13 @@ const initialState = {
   comments: [],
   status: "idle",
   error: null,
-  selectedPermalink: "",
+  selectedPost: "",
 };
 
 export const fetchComments = createAsyncThunk(
   "comments/fetchComments",
-  async (permalink) => {
-    const comments = await getPostComments(permalink);
+  async (post) => {
+    const comments = await getPostComments(post);
     return comments;
   }
 );
@@ -23,8 +23,8 @@ const commentSlice = createSlice({
     getComments(state, action) {
       state.comments = action.payload;
     },
-    setSelectedPermalink(state, action) {
-      state.selectedPermalink = action.payload;
+    setSelectedPost(state, action) {
+      state.selectedPost = action.payload;
     },
   },
   extraReducers: {
@@ -42,6 +42,6 @@ const commentSlice = createSlice({
   },
 });
 
-export default commentSlice.reducer;
-export const { getComments, setSelectedPermalink } = commentSlice.actions;
+export const { getComments, setSelectedPost } = commentSlice.actions;
 export const selectComments = (state) => state.comments.comments;
+export default commentSlice.reducer;
