@@ -19,48 +19,46 @@ const Subreddits = () => {
     }
   }, [status, dispatch]);
 
-  let content;
-
   if (status === "loading") {
-    content = <div className="notification">Loading...</div>;
-  } else if (status === "succeeded") {
-    content = (
-      <div className="subreddits-container">
-        <ul>
-          {subreddits.map((subreddit) => (
-            <Link to="/" key={subreddit.id}>
-              <li>
-                <button
-                  onClick={() => [
-                    dispatch(setSelectedSubreddit(subreddit.url)),
-                    dispatch(setSearchTerm("")),
-                  ]}
-                >
-                  <img
-                    src={subreddit.icon_img || icon}
-                    className="subreddit-icon"
-                    alt=""
-                  ></img>
-                  <div>{subreddit.display_name}</div>
-                </button>
-              </li>
-            </Link>
-          ))}
-        </ul>
-      </div>
-    );
-  } else if (status === "failed") {
-    content = <div className="notification">{error}</div>;
+    return <div className="notification">Loading...</div>;
+  }
+
+  if (status === "failed") {
+    return <div className="notification">{error}</div>;
   }
 
   return (
-    <div className="subreddits-section">
-      <div className="subreddits-header">
-        <h2>Subreddits</h2>
-        <IoMdArrowDropdown className="dropdown-arrow" size={18} />
+    <>
+      <div className="subreddits-section">
+        <div className="subreddits-header">
+          <h2>Subreddits</h2>
+          <IoMdArrowDropdown className="dropdown-arrow" size={18} />
+        </div>
+        <div className="subreddits-container">
+          <ul>
+            {subreddits.map((subreddit) => (
+              <Link to="/" key={subreddit.id}>
+                <li>
+                  <button
+                    onClick={() => [
+                      dispatch(setSelectedSubreddit(subreddit.url)),
+                      dispatch(setSearchTerm("")),
+                    ]}
+                  >
+                    <img
+                      src={subreddit.icon_img || icon}
+                      className="subreddit-icon"
+                      alt=""
+                    ></img>
+                    <div>{subreddit.display_name}</div>
+                  </button>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
       </div>
-      {content}
-    </div>
+    </>
   );
 };
 
