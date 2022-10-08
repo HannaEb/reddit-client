@@ -11,6 +11,7 @@ import Subreddits from "./features/Subreddits/Subreddits";
 import Feed from "./features/Feed/Feed";
 import PostPage from "./features/Post/PostPage";
 import Scroll from "./components/Scroll/Scroll";
+import Error from "./components/Error/Error";
 
 function App() {
   return (
@@ -24,8 +25,9 @@ function App() {
           </aside>
           <main>
             <Switch>
-              <Route path="/:subredditName" component={Feed} />
-              <Route path="/posts/:postId" component={PostPage} />
+              <Route exact path="/" component={Feed} />
+              <Route exact path="/posts/:postId" component={PostPage} />
+              <Route path="*" component={Error} />
               <Redirect to="/" />
             </Switch>
           </main>

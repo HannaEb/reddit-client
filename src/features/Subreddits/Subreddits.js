@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/io";
 import icon from "../../images/reddit-icon.png";
 import "./Subreddits.css";
@@ -37,11 +37,7 @@ const Subreddits = () => {
         <div className="subreddits-container">
           <ul>
             {subreddits.map((subreddit) => (
-              <NavLink
-                activeClassName={"active"}
-                to={`/${subreddit.display_name}`}
-                key={subreddit.id}
-              >
+              <Link to="/" key={subreddit.id}>
                 <li>
                   <button
                     onClick={() => [
@@ -57,7 +53,7 @@ const Subreddits = () => {
                     <div>{subreddit.display_name}</div>
                   </button>
                 </li>
-              </NavLink>
+              </Link>
             ))}
           </ul>
         </div>
