@@ -5,12 +5,12 @@
 }
 
 @media screen and (max-width: 780px) {
-  .subreddits-container ul {
+  .subreddits-container .subreddits-list {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .subreddits-container ul > * {
+  .subreddits-container .subreddits-list > * {
     flex: 1 1 auto;
   }
 }
@@ -58,7 +58,7 @@
   }
 }
 
-li button {
+.subreddit-btn {
   width: 100%;
   cursor: pointer;
   border: none;
@@ -71,7 +71,7 @@ li button {
   font-size: 0.8em;
 }
 
-li button:hover {
+.subreddit-btn:hover {
   background: #f8fafb;
 }
 
@@ -80,8 +80,4 @@ li button:hover {
   width: auto;
   padding: 0 0.5em;
   border-radius: 50%;
-}
-
-.active li button {
-  color: red;
 }

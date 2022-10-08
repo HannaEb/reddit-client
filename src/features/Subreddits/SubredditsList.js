@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/io";
-import icon from "../../images/reddit-icon.png";
 import "./Subreddits.css";
+import Subreddit from "./Subreddit";
 import { selectSubreddits, fetchSubreddits } from "../../slices/subredditSlice";
 import { setSelectedSubreddit, setSearchTerm } from "../../slices/postSlice";
 
@@ -35,27 +35,22 @@ const Subreddits = () => {
           <IoMdArrowDropdown className="dropdown-arrow" size={18} />
         </div>
         <div className="subreddits-container">
-          <ul>
+          <div className="subreddits-list">
             {subreddits.map((subreddit) => (
-              <Link to="/" key={subreddit.id}>
-                <li>
-                  <button
-                    onClick={() => [
-                      dispatch(setSelectedSubreddit(subreddit.url)),
-                      dispatch(setSearchTerm("")),
-                    ]}
-                  >
-                    <img
-                      src={subreddit.icon_img || icon}
-                      className="subreddit-icon"
-                      alt=""
-                    ></img>
-                    <div>{subreddit.display_name}</div>
-                  </button>
-                </li>
+              <Link
+                to="/"
+                key={subreddit.id}
+                onClick={() => [
+                  dispatch(setSelectedSubreddit(subreddit.url)),
+                  dispatch(setSearchTerm("")),
+                ]}
+              >
+                <div>
+                  <Subreddit subreddit={subreddit} />
+                </div>
               </Link>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </>

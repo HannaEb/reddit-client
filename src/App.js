@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Header from "./features/Header/Header";
-import Subreddits from "./features/Subreddits/Subreddits";
+import SubredditsList from "./features/Subreddits/SubredditsList";
 import Feed from "./features/Feed/Feed";
 import PostPage from "./features/Post/PostPage";
 import Scroll from "./components/Scroll/Scroll";
@@ -21,7 +21,7 @@ function App() {
         <Header />
         <section>
           <aside>
-            <Subreddits />
+            <SubredditsList />
           </aside>
           <main>
             <Switch>
