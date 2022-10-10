@@ -4,6 +4,7 @@ import icon from "../../images/reddit-icon.png";
 
 const Subreddit = (props) => {
   const { subreddit } = props;
+
   return (
     <>
       <button className="subreddit-btn">
