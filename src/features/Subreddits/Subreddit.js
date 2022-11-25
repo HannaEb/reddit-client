@@ -13,7 +13,7 @@ const Subreddit = (props) => {
           className="subreddit-icon"
           alt=""
         ></img>
-        <div>{subreddit.display_name}</div>
+        <span>{subreddit.display_name}</span>
       </button>
     </>
   );
